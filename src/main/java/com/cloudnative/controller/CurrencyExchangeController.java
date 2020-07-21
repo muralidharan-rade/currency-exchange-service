@@ -1,6 +1,5 @@
 package com.cloudnative.controller;
 
-import java.math.BigDecimal;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class CurrencyExchangeController {
 	@GetMapping(path = "/currency-exchange/from/{from}/to/{to}")
 	public CurrencyExchange getCurrencyExchange(@PathVariable String from, @PathVariable String to) {
 		Optional<CurrencyExchange> exchange = dao.getCurrencyExchange(from, to);
-		
+
 		CurrencyExchange exchangeValue = null;
 		if (exchange.isPresent()) {
 			exchangeValue = exchange.get();
